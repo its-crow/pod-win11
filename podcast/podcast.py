@@ -1622,9 +1622,9 @@ def build_parser() -> argparse.ArgumentParser:
 
     # queue-add
     p = sub.add_parser("queue-add", help="Add an episode to the download queue")
-    p.add_argument("--feed", required=True, help="Feed short name")
-    p.add_argument("--episode-id", type=int, help="Episode ID")
-    p.add_argument("--title", help="Case-insensitive substring to match")
+    p.add_argument("--feed", "-f", required=True, help="Feed short name")
+    p.add_argument("--episode-id", "-id", type=int, help="Episode ID")
+    p.add_argument("--title", "-t", help="Case-insensitive substring to match")
     p.set_defaults(func=cmd_queue_add)
 
     # queue-list
