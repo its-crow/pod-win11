@@ -4,16 +4,40 @@ cli tool for downloading podcasts + youtube stuff. setup is simple.
 
 ---
 
-requirements
+pre-install (requirements)
 
-you need python installed (3.10+ recommended)
+you need these installed BEFORE using the tool:
 
-then install pipx:
+1. python (3.10+)
+   https://www.python.org/downloads/
+
+2. pipx
 
     python -m pip install --user pipx
     pipx ensurepath
 
-restart your terminal after that
+restart your terminal after this
+
+3. ffmpeg (required for audio/video processing)
+
+windows (winget):
+    winget install "FFmpeg (Essentials Build)"
+
+verify:
+    ffmpeg -version
+
+4. node.js (recommended for youtube reliability)
+
+windows (winget):
+    winget install OpenJS.NodeJS
+
+verify:
+    node -v
+
+notes:
+- yt-dlp is installed automatically by this tool
+- ffmpeg is REQUIRED for video/audio merging
+- node helps avoid youtube blocking issues (not strictly required, but recommended)
 
 ---
 
