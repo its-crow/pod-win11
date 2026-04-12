@@ -2,23 +2,21 @@
 
 RSS-first podcast downloader with queues, playlists, and yt-dlp integration.
 
-Lightweight CLI tool for managing podcast feeds, downloading episodes, and organizing audio locally.
-
 ---
 
 ## Features
 
-- RSS-only parsing (Atom rejected)
-- Feed management (add / remove / rename)
-- SQLite-backed episode tracking
-- Flexible downloads (latest / all / by ID / since date)
-- Queue system
-- Playlist support (M3U export)
-- Full-text search (FTS5 optional)
-- OPML import/export
-- yt-dlp integration (audio + video)
-- Per-feed and global download directories
-- YouTube compatibility fixes (cookies + JS runtime support)
+* RSS-only parsing (Atom feeds not supported)
+* Feed management (add, remove, rename)
+* SQLite-backed episode tracking
+* Flexible downloads (latest, all, by ID, since a date)
+* Queue system
+* Playlist support (M3U export)
+* Full-text search (FTS5 optional)
+* OPML import/export
+* yt-dlp integration (audio + video)
+* Per-feed and global download directories
+* YouTube compatibility fixes (cookies + JS runtime support, default cookies=firefox, JS runtime=node)
 
 ---
 
@@ -26,9 +24,9 @@ Lightweight CLI tool for managing podcast feeds, downloading episodes, and organ
 
 ### Using pipx (recommended)
 
-pipx install git+https://github.com/its-crow/pod-win11.git
+pipx install git+[https://github.com/its-crow/podcast.git](https://github.com/its-crow/podcast.git)
 
-### Local install (dev)
+### Local / development install
 
 pipx install -e .
 
@@ -47,15 +45,19 @@ podcast
 ## Quick Start
 
 # Initialize config + database
+
 podcast init
 
 # Add a feed
-podcast add-feed tdz https://example.com/rss.xml
+
+podcast add-feed tdz [https://example.com/rss.xml](https://example.com/rss.xml)
 
 # Refresh episodes
+
 podcast refresh --feed tdz
 
 # Download latest episode
+
 podcast download --feed tdz
 
 ---
@@ -120,12 +122,10 @@ podcast download-yt --link <url>
 podcast download-yt --link <url> --video
 
 Optional flags:
---cookies-from-browser firefox
---js-runtime node
+--cookies-from-browser <browser> (default: firefox)
+--js-runtime <runtime> (default: node)
 
-Defaults:
-- cookies: firefox
-- runtime: node
+This fixes YouTube blocking issues and supports proper audio/video download.
 
 ---
 
@@ -162,32 +162,52 @@ podcast --version
 
 Config: PODFILE.ini
 Database: SQLite
-Audio: per-feed dirs
+Audio: per-feed directories
 
 ---
 
 ## Notes
 
-- RSS feeds only (Atom rejected)
-- SQLite used for persistence
-- Optional FTS5 support
-- SSL verification disabled in code (intentional for compatibility)
-- Windows Media Player compatibility handled via format selection (mp4 + m4a)
+* RSS feeds only (Atom unsupported)
+* SQLite used for persistence
+* Optional FTS5 support
+* SSL verification disabled in code (intentional)
+* Windows Media Player compatibility handled via format selection (mp4 + m4a)
 
 ---
 
 ## Version
 
-0.4
+0.4.1
 
 ---
 
 ## Changelog
 
-podcast --changes
+* Added yt-dlp video support with mp4/m4a compatibility
+* Added new CLI flags:
+
+  * --cookies-from-browser <browser>
+  * --js-runtime <runtime>
+* Automatic defaults:
+
+  * cookies → firefox
+  * JS runtime → node
+* Pyproject.toml packaging
+* GitHub pipx install support
+* Improved yt-dlp format selection
+* Updated CLI to support runtime/auth options
+* Fixed no audio in downloads (Opus codec issue)
+* Fixed yt-dlp 429 / bot detection errors
+* Fixed entry point import path
+* Fixed git SSH + .gitignore issues
+* Removed setup.py
+* Added version tag v0.4
+
+Use `podcast --changes` to see full changelog.
 
 ---
 
 ## License
 
-MIT (or add your license)
+MIT (or your chosen license)
