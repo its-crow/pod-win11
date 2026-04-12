@@ -182,28 +182,6 @@ Audio: per-feed directories
 
 ---
 
-## Changelog
-
-* Added yt-dlp video support with mp4/m4a compatibility
-* Added new CLI flags:
-
-  * --cookies-from-browser <browser>
-  * --js-runtime <runtime>
-* Automatic defaults:
-
-  * cookies → firefox
-  * JS runtime → node
-* Pyproject.toml packaging
-* GitHub pipx install support
-* Improved yt-dlp format selection
-* Updated CLI to support runtime/auth options
-* Fixed no audio in downloads (Opus codec issue)
-* Fixed yt-dlp 429 / bot detection errors
-* Fixed entry point import path
-* Fixed git SSH + .gitignore issues
-* Removed setup.py
-* Added version tag v0.4
-
 Use `podcast --changes` to see full changelog.
 
 ---
