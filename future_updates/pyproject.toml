@@ -1,0 +1,16 @@
+[build-system]
+requires = ["setuptools"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "podcast"
+version = "0.4.0"
+description = "RSS-first podcast + yt-dlp CLI"
+authors = [{ name = "crow" }]
+requires-python = ">=3.10"
+dependencies = [
+    "yt-dlp"
+]
+
+[project.scripts]
+podcast = "podcast.podcast:main"
