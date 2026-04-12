@@ -1,0 +1,111 @@
+podcast CLI - install instructions
+
+cli tool for downloading podcasts + youtube stuff. setup is simple.
+
+---
+
+requirements
+
+you need python installed (3.10+ recommended)
+
+then install pipx:
+
+    python -m pip install --user pipx
+    pipx ensurepath
+
+restart your terminal after that
+
+---
+
+install
+
+run this:
+
+    pipx install git+https://github.com/its-crow/podcast.git
+
+that installs the tool globally (but safely isolated)
+
+---
+
+verify it works
+
+    podcast --help
+    podcast -h
+
+you should see the command list
+
+---
+
+first time setup (important)
+
+    podcast init
+
+this creates config + database.
+
+folders created:
+- yt downloads → ~/Videos/yt
+- podcast downloads → ~/Music/pods
+- app data → ~/apps
+
+that’s it — it won’t mess with anything else on your system
+
+---
+
+example usage
+
+add a podcast:
+
+    podcast add-feed tdz https://example.com/rss.xml
+
+refresh:
+
+    podcast refresh --feed tdz
+
+download latest:
+
+    podcast download --feed tdz
+
+---
+
+youtube downloads
+
+audio:
+
+    podcast download-yt --link <url>
+
+video:
+
+    podcast download-yt --link <url> --video
+
+notes:
+- uses browser cookies automatically (firefox by default)
+- uses node runtime if available
+- helps avoid youtube blocking issues
+
+---
+
+updating
+
+when i push updates:
+
+    pipx upgrade podcast
+
+---
+
+uninstall
+
+    pipx uninstall podcast
+
+---
+
+notes
+
+- works from anywhere in terminal (no cd needed)
+- installed in its own isolated environment (safe)
+- all downloads/config stay in your home directory
+
+---
+
+if something breaks, just reinstall:
+
+    pipx reinstall podcast
