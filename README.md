@@ -210,4 +210,4 @@ Use `podcast --changes` to see full changelog.
 
 ## License
 
-MIT (or your chosen license)
+MIT 
