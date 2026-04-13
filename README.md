@@ -85,9 +85,9 @@ workflow example:
 podcast add-feed tdz http://rss.rss
 
 
-podcast list-feeds //check to make sure your feed exists
+podcast list-feeds       //check to make sure your feed exists
 
-podcast refresh --feed tdz //refresh feed for new episodes
+podcast refresh --feed tdz      //refresh feed for new episodes
 
 podcast download --feed tdz --latest 1
 
