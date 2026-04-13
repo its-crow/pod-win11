@@ -78,6 +78,16 @@ podcast refresh --feed <name>
 
 podcast refresh --all
 
+
+-----------------
+workflow example:
+
+podcast add-feed tdz http://rss.rss
+
+podcast refresh --feed tdz
+
+podcast download --feed tdz --latest 1
+
 ---
 
 ### Downloads
@@ -96,6 +106,11 @@ Options:
 --since YYYY-MM-DD
 
 --jobs N
+
+
+example:
+
+podcast download --feed tdz --latest 5
 
 ---
 
@@ -142,6 +157,7 @@ podcast download-yt --link <url>
 podcast download-yt --link <url> --video
 
 Optional flags:
+
 --cookies-from-browser <browser> (default: firefox)
 
 --js-runtime <runtime> (default: node)
