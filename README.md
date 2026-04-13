@@ -67,10 +67,15 @@ podcast download --feed tdz
 ### Feeds
 
 podcast list-feeds
+
 podcast add-feed <name> <rss_url>
+
 podcast remove-feed <name>
+
 podcast rename-feed <old> <new>
+
 podcast refresh --feed <name>
+
 podcast refresh --all
 
 ---
