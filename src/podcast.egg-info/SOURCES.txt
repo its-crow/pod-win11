@@ -1,0 +1,12 @@
+MANIFEST.in
+README.md
+pyproject.toml
+src/podcast/CHANGELOG.md
+src/podcast/__init__.py
+src/podcast/podcast.py
+src/podcast.egg-info/PKG-INFO
+src/podcast.egg-info/SOURCES.txt
+src/podcast.egg-info/dependency_links.txt
+src/podcast.egg-info/entry_points.txt
+src/podcast.egg-info/requires.txt
+src/podcast.egg-info/top_level.txt

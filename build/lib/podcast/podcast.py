@@ -1511,7 +1511,7 @@ def build_parser() -> argparse.ArgumentParser:
     parser.add_argument(
         "--version",
         action="version",
-        version="podcast 0.4.2"
+        version="podgasm 0.3"
     )
 
     parser.add_argument(
