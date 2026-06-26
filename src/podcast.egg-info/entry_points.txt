@@ -1,2 +1,0 @@
-[console_scripts]
-podcast = podcast.podcast:main
